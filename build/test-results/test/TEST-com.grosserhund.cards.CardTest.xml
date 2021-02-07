@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.grosserhund.cards.CardTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-02-07T01:22:48" hostname="centos7" time="0.046">
+  <properties/>
+  <testcase name="setFaceDown()" classname="com.grosserhund.cards.CardTest" time="0.003"/>
+  <testcase name="testToString()" classname="com.grosserhund.cards.CardTest" time="0.026"/>
+  <testcase name="isFaceDown()" classname="com.grosserhund.cards.CardTest" time="0.0"/>
+  <testcase name="getDeck()" classname="com.grosserhund.cards.CardTest" time="0.001"/>
+  <testcase name="getRank()" classname="com.grosserhund.cards.CardTest" time="0.003"/>
+  <testcase name="getSuit()" classname="com.grosserhund.cards.CardTest" time="0.001"/>
+  <testcase name="get()" classname="com.grosserhund.cards.CardTest" time="0.006"/>
+  <testcase name="setFaceUp()" classname="com.grosserhund.cards.CardTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

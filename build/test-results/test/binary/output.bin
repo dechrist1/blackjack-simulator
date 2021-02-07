@@ -1,0 +1,44 @@
+V20:22:48.810 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+R20:22:48.821 [Test worker] DEBUG com.grosserhund.blackjack.Game - Starting game 1
+õ20:22:48.822 [Test worker] TRACE com.grosserhund.blackjack.players.dealer.Dealer - Dealing Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS] to dealer
+ç20:22:48.823 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Player Worf can bet with a bank of $500 and a bet amount of 10
+n20:22:48.823 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - Initial bet placed for Worf $10
+Ö20:22:48.824 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Balances after Initial bet for Worf Bank=$490, Bet=$10
+ö20:22:48.824 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=false, rank=TEN, suit=DIAMONDS] to Worf
+ô20:22:48.825 [Test worker] TRACE com.grosserhund.blackjack.players.dealer.Dealer - Dealing Card [deck=1, faceDown=true, rank=SIX, suit=SPADES] to dealer
+ô20:22:48.825 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=false, rank=NINE, suit=HEARTS] to Worf
+Å20:22:48.825 [Test worker] TRACE com.grosserhund.blackjack.players.strategies.DefaultSplitStrategy - BlackjackPlayerState: STAND
+x20:22:48.841 [Test worker] DEBUG com.grosserhund.blackjack.players.player.Player - Beginning Blackjack state for Worf: 
+”   BlackjackPlayerHand [ handResult=null, blackJackState=NEW_HAND, total=19, card count=2, allowSplit=false, doubledDown=false, doubleDownAllowed=true, cards=[Card [deck=1, faceDown=false, rank=TEN, suit=DIAMONDS], Card [deck=1, faceDown=false, rank=NINE, suit=HEARTS]], dealerUpCard=Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS]]
+Ä20:22:48.842 [Test worker] TRACE com.grosserhund.blackjack.players.strategies.DefaultHardStrategy - BlackjackPlayerState: STAND
+u20:22:48.843 [Test worker] DEBUG com.grosserhund.blackjack.players.player.Player - Ending Blackjack state for Worf: 
+–   BlackjackPlayerHand [ handResult=null, blackJackState=STAND, total=19, card count=2, allowSplit=false, doubledDown=false, doubleDownAllowed=true, cards=[Card [deck=1, faceDown=false, rank=TEN, suit=DIAMONDS], Card [deck=1, faceDown=false, rank=NINE, suit=HEARTS]], dealerUpCard=Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS]]
+x20:22:48.843 [Test worker] DEBUG com.grosserhund.blackjack.players.dealer.Dealer - Beginning dealer blackjack state HIT
+v20:22:48.844 [Test worker] TRACE com.grosserhund.blackjack.players.dealer.Dealer - Current dealer blackjack state HIT
+y20:22:48.844 [Test worker] TRACE com.grosserhund.blackjack.players.dealer.Dealer - Current dealer blackjack state BUSTED
+x20:22:48.844 [Test worker] DEBUG com.grosserhund.blackjack.players.dealer.Dealer - Ending dealer blackjack state BUSTED
+h20:22:48.844 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Player Bank before = $490
+g20:22:48.845 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Player Bank after = $510
+T20:22:48.848 [Test worker] DEBUG com.grosserhund.blackjack.Game - Worf (count=1): [
+–   BlackjackPlayerHand [ handResult=WIN, blackJackState=STAND, total=19, card count=2, allowSplit=false, doubledDown=false, doubleDownAllowed=true, cards=[Card [deck=1, faceDown=false, rank=TEN, suit=DIAMONDS], Card [deck=1, faceDown=false, rank=NINE, suit=HEARTS]], dealerUpCard=Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS]]]
+Ë20:22:48.854 [Test worker] DEBUG com.grosserhund.blackjack.Game - BlackjackDealerHand [blackJackState=BUSTED, total=26, card count=4, cards=[Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS], Card [deck=1, faceDown=true, rank=SIX, suit=SPADES], Card [deck=1, faceDown=false, rank=SEVEN, suit=CLUBS], Card [deck=1, faceDown=false, rank=KING, suit=SPADES]]]
+
+! V20:22:48.873 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+!"V20:22:48.875 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+!#V20:22:48.876 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+!$V20:22:48.878 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+&%V20:22:48.881 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+&'V20:22:48.883 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+&(V20:22:48.884 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+&(ç20:22:48.885 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Player Worf can bet with a bank of $500 and a bet amount of 10
+&)V20:22:48.886 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+&)z20:22:48.886 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No initial betting needed - Playing for fun
+&)ò20:22:48.886 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=true, rank=FIVE, suit=SPADES] to Worf
+&)ò20:22:48.887 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=true, rank=FIVE, suit=HEARTS] to Worf
+&)z20:22:48.887 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No initial betting needed - Playing for fun
+&)~20:22:48.887 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No double down betting needed - Playing for fun
+&*V20:22:48.888 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+&*z20:22:48.889 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No initial betting needed - Playing for fun
+&*ó20:22:48.889 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=true, rank=ACE, suit=SPADES] to Worf
+&*ô20:22:48.889 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=true, rank=QUEEN, suit=SPADES] to Worf
+&*z20:22:48.889 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No initial betting needed - Playing for fun

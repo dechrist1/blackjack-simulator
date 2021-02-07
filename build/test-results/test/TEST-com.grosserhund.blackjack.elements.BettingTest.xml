@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.grosserhund.blackjack.elements.BettingTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-02-07T01:22:48" hostname="centos7" time="0.009">
+  <properties/>
+  <testcase name="playerCanPlayOrBet()" classname="com.grosserhund.blackjack.elements.BettingTest" time="0.001"/>
+  <testcase name="playerCanPlay()" classname="com.grosserhund.blackjack.elements.BettingTest" time="0.001"/>
+  <testcase name="playerCanBet()" classname="com.grosserhund.blackjack.elements.BettingTest" time="0.001"/>
+  <testcase name="doubleDown()" classname="com.grosserhund.blackjack.elements.BettingTest" time="0.002"/>
+  <testcase name="placeInitialBet()" classname="com.grosserhund.blackjack.elements.BettingTest" time="0.001"/>
+  <system-out><![CDATA[20:22:48.881 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+20:22:48.883 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+20:22:48.884 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+20:22:48.885 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Player Worf can bet with a bank of $500 and a bet amount of 10
+20:22:48.886 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+20:22:48.886 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No initial betting needed - Playing for fun
+20:22:48.886 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=true, rank=FIVE, suit=SPADES] to Worf
+20:22:48.887 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=true, rank=FIVE, suit=HEARTS] to Worf
+20:22:48.887 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No initial betting needed - Playing for fun
+20:22:48.887 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No double down betting needed - Playing for fun
+20:22:48.888 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+20:22:48.889 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No initial betting needed - Playing for fun
+20:22:48.889 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=true, rank=ACE, suit=SPADES] to Worf
+20:22:48.889 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=true, rank=QUEEN, suit=SPADES] to Worf
+20:22:48.889 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - No initial betting needed - Playing for fun
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

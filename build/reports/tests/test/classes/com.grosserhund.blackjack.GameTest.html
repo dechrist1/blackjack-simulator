@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - GameTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>GameTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.grosserhund.blackjack.html">com.grosserhund.blackjack</a> &gt; GameTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.424s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">playGame()</td>
+<td class="success">0.424s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>20:22:48.810 [Test worker] DEBUG com.grosserhund.blackjack.Game - Game Object created
+20:22:48.821 [Test worker] DEBUG com.grosserhund.blackjack.Game - Starting game 1
+20:22:48.822 [Test worker] TRACE com.grosserhund.blackjack.players.dealer.Dealer - Dealing Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS] to dealer
+20:22:48.823 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Player Worf can bet with a bank of $500 and a bet amount of 10
+20:22:48.823 [Test worker] TRACE com.grosserhund.blackjack.elements.Betting - Initial bet placed for Worf $10
+20:22:48.824 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Balances after Initial bet for Worf Bank=$490, Bet=$10
+20:22:48.824 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=false, rank=TEN, suit=DIAMONDS] to Worf
+20:22:48.825 [Test worker] TRACE com.grosserhund.blackjack.players.dealer.Dealer - Dealing Card [deck=1, faceDown=true, rank=SIX, suit=SPADES] to dealer
+20:22:48.825 [Test worker] TRACE com.grosserhund.blackjack.players.player.Player - Dealing Card [deck=1, faceDown=false, rank=NINE, suit=HEARTS] to Worf
+20:22:48.825 [Test worker] TRACE com.grosserhund.blackjack.players.strategies.DefaultSplitStrategy - BlackjackPlayerState: STAND
+20:22:48.841 [Test worker] DEBUG com.grosserhund.blackjack.players.player.Player - Beginning Blackjack state for Worf: 
+   BlackjackPlayerHand [ handResult=null, blackJackState=NEW_HAND, total=19, card count=2, allowSplit=false, doubledDown=false, doubleDownAllowed=true, cards=[Card [deck=1, faceDown=false, rank=TEN, suit=DIAMONDS], Card [deck=1, faceDown=false, rank=NINE, suit=HEARTS]], dealerUpCard=Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS]]
+20:22:48.842 [Test worker] TRACE com.grosserhund.blackjack.players.strategies.DefaultHardStrategy - BlackjackPlayerState: STAND
+20:22:48.843 [Test worker] DEBUG com.grosserhund.blackjack.players.player.Player - Ending Blackjack state for Worf: 
+   BlackjackPlayerHand [ handResult=null, blackJackState=STAND, total=19, card count=2, allowSplit=false, doubledDown=false, doubleDownAllowed=true, cards=[Card [deck=1, faceDown=false, rank=TEN, suit=DIAMONDS], Card [deck=1, faceDown=false, rank=NINE, suit=HEARTS]], dealerUpCard=Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS]]
+20:22:48.843 [Test worker] DEBUG com.grosserhund.blackjack.players.dealer.Dealer - Beginning dealer blackjack state HIT
+20:22:48.844 [Test worker] TRACE com.grosserhund.blackjack.players.dealer.Dealer - Current dealer blackjack state HIT
+20:22:48.844 [Test worker] TRACE com.grosserhund.blackjack.players.dealer.Dealer - Current dealer blackjack state BUSTED
+20:22:48.844 [Test worker] DEBUG com.grosserhund.blackjack.players.dealer.Dealer - Ending dealer blackjack state BUSTED
+20:22:48.844 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Player Bank before = $490
+20:22:48.845 [Test worker] DEBUG com.grosserhund.blackjack.elements.Betting - Player Bank after = $510
+20:22:48.848 [Test worker] DEBUG com.grosserhund.blackjack.Game - Worf (count=1): [
+   BlackjackPlayerHand [ handResult=WIN, blackJackState=STAND, total=19, card count=2, allowSplit=false, doubledDown=false, doubleDownAllowed=true, cards=[Card [deck=1, faceDown=false, rank=TEN, suit=DIAMONDS], Card [deck=1, faceDown=false, rank=NINE, suit=HEARTS]], dealerUpCard=Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS]]]
+20:22:48.854 [Test worker] DEBUG com.grosserhund.blackjack.Game - BlackjackDealerHand [blackJackState=BUSTED, total=26, card count=4, cards=[Card [deck=1, faceDown=false, rank=THREE, suit=CLUBS], Card [deck=1, faceDown=true, rank=SIX, suit=SPADES], Card [deck=1, faceDown=false, rank=SEVEN, suit=CLUBS], Card [deck=1, faceDown=false, rank=KING, suit=SPADES]]]
+
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.7</a> at Feb 6, 2021, 8:22:49 PM</p>
+</div>
+</div>
+</body>
+</html>
