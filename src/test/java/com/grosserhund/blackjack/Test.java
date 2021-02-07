@@ -44,6 +44,7 @@ public class Test {
 
 		LOGGER.info("Starting Blackjack simulation");
 		StopWatch stopWatch = new StopWatch();
+
 		stopWatch.start();
 
 		for (int i = 0; i < gamesToPlay; i++) {

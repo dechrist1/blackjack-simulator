@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5138094-89b3-468b-a33d-b7d0cfae9a8d" name="Default Changelist" comment="" />
+    <list default="true" id="a5138094-89b3-468b-a33d-b7d0cfae9a8d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/grosserhund/blackjack/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grosserhund/blackjack/Test.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,7 +248,7 @@
       <workItem from="1611701871791" duration="23870000" />
       <workItem from="1611786868227" duration="7711000" />
       <workItem from="1611848188484" duration="18646000" />
-      <workItem from="1612122007875" duration="45319000" />
+      <workItem from="1612122007875" duration="48235000" />
     </task>
     <servers />
   </component>
@@ -259,7 +263,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="false" />
+                  <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
               <option name="FILTERS">
@@ -274,6 +278,21 @@
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
