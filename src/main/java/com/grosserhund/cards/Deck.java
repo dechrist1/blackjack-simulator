@@ -8,38 +8,38 @@ import java.util.Random;
 
 
 public class Deck {
-	private final List<Card> cards;
-	int index;
+    private final List<Card> cards;
+    int index;
 
-	public Deck() {
-		cards = createDeck(0);
-		index = 0;
-	}
+    public Deck() {
+        cards = createDeck(0);
+        index = 0;
+    }
 
-	public static List<Card> createDeck(int deckNumber) {
-		List<Card> cards = new ArrayList<>();
+    public static List<Card> createDeck(int deckNumber) {
+        List<Card> cards = new ArrayList<>();
 
-		Arrays.asList(Suit.values()).forEach(suit ->
-				Arrays.asList(Rank.values()).forEach(rank ->
-						cards.add(new Card(deckNumber, suit, rank))
-				)
-		);
+        Arrays.asList(Suit.values()).forEach(suit ->
+                Arrays.asList(Rank.values()).forEach(rank ->
+                        cards.add(new Card(deckNumber, suit, rank))
+                )
+        );
 
-		return cards;
-	}
+        return cards;
+    }
 
     public void shuffle() {
-		Collections.shuffle(cards, new Random());
-		index = 0;
-	}
+        Collections.shuffle(cards, new Random());
+        index = 0;
+    }
 
-	public Card draw(boolean faceDown) {
-		if(index < cards.size()) {
-			Card card = cards.get(index++);
-			card.setFaceDown(faceDown);
-			return card;
-		} else {
-			return null;
-		}
-	}
+    public Card draw(boolean faceDown) {
+        if (index < cards.size()) {
+            Card card = cards.get(index++);
+            card.setFaceDown(faceDown);
+            return card;
+        } else {
+            return null;
+        }
+    }
 }

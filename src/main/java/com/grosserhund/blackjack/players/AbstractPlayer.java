@@ -30,6 +30,7 @@ public abstract class AbstractPlayer {
     }
 
     public abstract void deal(Card card);
+
     public abstract boolean playHand(Shoe shoe);
 
     public BigDecimal getCurrentBank() {

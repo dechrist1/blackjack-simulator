@@ -28,12 +28,12 @@ public class Table {
     }
 
     public boolean addPlayer(String name, BigDecimal openingBank) {
-        if(players.size() < rules.getMaximumPlayers()) {
+        if (players.size() < rules.getMaximumPlayers()) {
             players.add(new Player(name, rules, openingBank));
             return true;
         }
 
-        LOGGER.error("Unable to add player {} = maximum players = {}", name, rules.getMaximumPlayers() );
+        LOGGER.error("Unable to add player {} = maximum players = {}", name, rules.getMaximumPlayers());
         return false;
     }
 

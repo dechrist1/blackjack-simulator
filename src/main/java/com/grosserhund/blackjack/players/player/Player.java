@@ -50,7 +50,7 @@ public class Player extends AbstractPlayer {
     public void deal(Card card) {
         BlackjackPlayerHand hand;
 
-        if(hands.size() == 0) {
+        if (hands.size() == 0) {
             gamesPlayed();
             BlackjackPlayerHand blackjackPlayerHand =
                     new BlackjackPlayerHand(hardStrategy, softStrategy, rules.isAllowDoubleDown());
@@ -60,7 +60,7 @@ public class Player extends AbstractPlayer {
 
         hand = hands.get(0);
 
-        if(hand.getCardCount() < 2) {
+        if (hand.getCardCount() < 2) {
             hand.addCard(card);
             LOGGER.trace("Dealing {} to {}", card, name);
         }
@@ -68,7 +68,7 @@ public class Player extends AbstractPlayer {
 
     @Override
     public boolean playHand(Shoe shoe) {
-        if(!betting.playerCanPlay(this)) {
+        if (!betting.playerCanPlay(this)) {
             return false;
         }
 
@@ -78,17 +78,17 @@ public class Player extends AbstractPlayer {
 
         BlackJackState blackJackState = splitStrategy.getBlackJackState(dealerUpCard, blackjackPlayerHand);
 
-        if(blackJackState.equals(BlackJackPlayerState.STAND_ON_DEALER_BLACKJACK)) {
+        if (blackJackState.equals(BlackJackPlayerState.STAND_ON_DEALER_BLACKJACK)) {
             LOGGER.trace("Dealer stands on blackjack for {}: {}", name, blackjackPlayerHand);
             return true;
         }
 
         //Check for a possible split
-        if(rules.isAllowPlayerSplit()) {
-            if(blackjackPlayerHand.isFirstTwoCardsTheSame()) {
-                if(blackJackState == BlackJackPlayerState.SPLIT) {
+        if (rules.isAllowPlayerSplit()) {
+            if (blackjackPlayerHand.isFirstTwoCardsTheSame()) {
+                if (blackJackState == BlackJackPlayerState.SPLIT) {
                     BlackjackPlayerHand hand = split(shoe, blackjackPlayerHand);
-                    if(hand != null) {
+                    if (hand != null) {
                         splitHands();
                         hands.add(hand);
                         LOGGER.trace("Hands now split: {}", hands);
@@ -97,14 +97,14 @@ public class Player extends AbstractPlayer {
             }
         }
 
-        for(BlackjackPlayerHand hand: hands) {
+        for (BlackjackPlayerHand hand : hands) {
             BlackJackPlayerState state;// = (BlackJackPlayerState) hand.getBlackJackState();
-            LOGGER.debug("Beginning Blackjack state for {}: {}" , name, hand);
+            LOGGER.debug("Beginning Blackjack state for {}: {}", name, hand);
 
-            while(!(state = hand.getBlackJackState()).isStand()) {
+            while (!(state = hand.getBlackJackState()).isStand()) {
                 LOGGER.trace("Current Blackjack state for {}: {}", name, hand);
 
-                switch( state) {
+                switch (state) {
                     case DOUBLE_DOWN:
                         doubleDown(hand);
                     case HIT:
@@ -121,7 +121,7 @@ public class Player extends AbstractPlayer {
     private BlackjackPlayerHand split(Shoe shoe, BlackjackPlayerHand existingPlayerHand) {
         BlackjackPlayerHand newPlayerHand = null;
 
-        if(betting.playerCanPlayOrBet(this)) {
+        if (betting.playerCanPlayOrBet(this)) {
             newPlayerHand = new BlackjackPlayerHand(hardStrategy, softStrategy, rules.isDoubleDownOnSplit());
 
             newPlayerHand.split(existingPlayerHand);
@@ -135,11 +135,11 @@ public class Player extends AbstractPlayer {
         return newPlayerHand;
     }
 
-	public void doubleDown(BlackjackPlayerHand blackjackPlayerHand) {
+    public void doubleDown(BlackjackPlayerHand blackjackPlayerHand) {
         blackjackPlayerHand.setDoubleDownAllowed(false);
         blackjackPlayerHand.doubledDown(true);
         betting.doubleDown(this, blackjackPlayerHand);
-	}
+    }
 
     public String printHands() {
         return name + " (count=" + hands.size() + "): " + hands.toString();
@@ -161,7 +161,7 @@ public class Player extends AbstractPlayer {
     public String getStats() {
         return name + ":" + super.getStats() +
                 ", fiveCardCharlie=" + fiveCardCharlie +
-            ", splitHands=" + splitHands;
+                ", splitHands=" + splitHands;
     }
 
     @Override
@@ -171,7 +171,7 @@ public class Player extends AbstractPlayer {
 
     public void naturalBlackjack(Dealer dealer, BlackjackPlayerHand blackjackPlayerHand) {
         naturalBlackjack();
-        betting.naturalBlackJack (this, dealer, blackjackPlayerHand);
+        betting.naturalBlackJack(this, dealer, blackjackPlayerHand);
     }
 
     public void handWon(Dealer dealer, BlackjackPlayerHand blackjackPlayerHand) {

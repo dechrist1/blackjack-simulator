@@ -34,8 +34,8 @@ class ShoeTest {
 
     @Test
     void getCardCount() {
-       assertNotEquals(0,shoe.getCardCount());
-       assertEquals(decks * 52, shoe.getCardCount());
+        assertNotEquals(0, shoe.getCardCount());
+        assertEquals(decks * 52, shoe.getCardCount());
     }
 
     @Test

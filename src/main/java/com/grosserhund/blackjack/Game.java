@@ -25,15 +25,15 @@ public class Game {
     }
 
     public boolean playGame() {
-        if(table.getRules().isAllowedBetting()) {
+        if (table.getRules().isAllowedBetting()) {
             int playersThatCanPlay = 0;
-            for(Player player: table.getPlayers()) {
-                if(player.canPlay()) {
+            for (Player player : table.getPlayers()) {
+                if (player.canPlay()) {
                     playersThatCanPlay++;
                 }
             }
 
-            if(playersThatCanPlay == 0) {
+            if (playersThatCanPlay == 0) {
                 return false;
             }
         }
@@ -44,8 +44,8 @@ public class Game {
         table.getShoe().shuffle();
         clearHand();
         deal();
-        if(!checkDealerForBlackjack()) {
-            if(playPlayers() == 0) {
+        if (!checkDealerForBlackjack()) {
+            if (playPlayers() == 0) {
                 return false;
             }
             playDealer();
@@ -55,10 +55,10 @@ public class Game {
     }
 
     private boolean checkDealerForBlackjack() {
-        if(dealer.getHand().isHandBlackJack()) {
-            for(Player player: table.getPlayers()) {
-                for(BlackjackPlayerHand playerHand: player.getHands()) {
-                    if(!playerHand.isHandBlackJack()) {
+        if (dealer.getHand().isHandBlackJack()) {
+            for (Player player : table.getPlayers()) {
+                for (BlackjackPlayerHand playerHand : player.getHands()) {
+                    if (!playerHand.isHandBlackJack()) {
                         playerHand.standOnDealerBlackjack();
                     }
                 }
@@ -71,9 +71,9 @@ public class Game {
     private int playPlayers() {
         int playerGamesPlayed = 0;
 
-        for(Player player: table.getPlayers()) {
-            if(player.playHand(table.getShoe()))
-                playerGamesPlayed++ ;
+        for (Player player : table.getPlayers()) {
+            if (player.playHand(table.getShoe()))
+                playerGamesPlayed++;
         }
 
         return playerGamesPlayed;
@@ -86,12 +86,12 @@ public class Game {
     private void calculateWinners() {
         BlackjackDealerHand dealerHand = dealer.getHand();
 
-        for(Player player: table.getPlayers()) {
-            for(BlackjackPlayerHand playerHand: player.getHands()) {
+        for (Player player : table.getPlayers()) {
+            for (BlackjackPlayerHand playerHand : player.getHands()) {
                 player.handsPlayed();
                 dealer.handsPlayed();
-                if(playerHand.getBlackJackState() == BlackJackPlayerState.STAND_ON_DEALER_BLACKJACK) {
-                    if(playerHand.getBlackJackState() == BlackJackPlayerState.NATURAL_BLACKJACK) {
+                if (playerHand.getBlackJackState() == BlackJackPlayerState.STAND_ON_DEALER_BLACKJACK) {
+                    if (playerHand.getBlackJackState() == BlackJackPlayerState.NATURAL_BLACKJACK) {
                         dealer.handPushed(dealerHand);
                         player.handPushed(dealer, playerHand);
                     } else {
@@ -101,7 +101,7 @@ public class Game {
                     continue;
                 }
 
-                if(playerHand.getBlackJackState() == BlackJackPlayerState.BUSTED &&
+                if (playerHand.getBlackJackState() == BlackJackPlayerState.BUSTED &&
                         dealerHand.getBlackjackState() == BlackJackDealerState.BUSTED) {
                     player.playerBusted(playerHand);
                     dealer.dealerBusted(dealerHand);
@@ -110,7 +110,7 @@ public class Game {
                     continue;
                 }
 
-                if (playerHand.getBlackJackState() == BlackJackPlayerState.BUSTED ) {
+                if (playerHand.getBlackJackState() == BlackJackPlayerState.BUSTED) {
                     player.playerBusted(playerHand);
                     player.handLost(dealer, playerHand);
                     dealer.handWon(dealerHand);
@@ -124,7 +124,7 @@ public class Game {
                     continue;
                 }
 
-                if(playerHand.getBlackJackState() == BlackJackPlayerState.NATURAL_BLACKJACK &&
+                if (playerHand.getBlackJackState() == BlackJackPlayerState.NATURAL_BLACKJACK &&
                         dealerHand.getBlackjackState() == BlackJackDealerState.NATURAL_BLACKJACK) {
                     player.naturalBlackjack();
                     dealer.naturalBlackjack();
@@ -133,31 +133,31 @@ public class Game {
                     continue;
                 }
 
-                if(playerHand.getBlackJackState() == BlackJackPlayerState.NATURAL_BLACKJACK) {
+                if (playerHand.getBlackJackState() == BlackJackPlayerState.NATURAL_BLACKJACK) {
                     player.naturalBlackjack(dealer, playerHand);
                     player.handWon(dealer, playerHand);
                     dealer.handLost(dealerHand);
                     continue;
                 }
 
-                if(dealerHand.getBlackjackState() == BlackJackDealerState.NATURAL_BLACKJACK) {
+                if (dealerHand.getBlackjackState() == BlackJackDealerState.NATURAL_BLACKJACK) {
                     dealer.naturalBlackjack();
                     dealer.handWon(dealerHand);
                     player.handLost(dealer, playerHand);
                     continue;
                 }
 
-                if(playerHand.getBlackJackState() == BlackJackPlayerState.FIVE_CARD_CHARLIE) {
+                if (playerHand.getBlackJackState() == BlackJackPlayerState.FIVE_CARD_CHARLIE) {
                     player.fiveCardCharlie();
                     player.handWon(dealer, playerHand);
                     dealer.handLost(dealerHand);
                     continue;
                 }
 
-                if(playerHand.getTotal() > dealerHand.getTotal()) {
+                if (playerHand.getTotal() > dealerHand.getTotal()) {
                     player.handWon(dealer, playerHand);
                     dealer.handLost(dealerHand);
-                } else if(playerHand.getTotal() < dealerHand.getTotal()) {
+                } else if (playerHand.getTotal() < dealerHand.getTotal()) {
                     player.handLost(dealer, playerHand);
                     dealer.handWon(dealerHand);
                 } else {
@@ -176,7 +176,7 @@ public class Game {
             player.clearHand();
         }
 
-       table.getDealer().clearHand();
+        table.getDealer().clearHand();
     }
 
 
@@ -186,7 +186,7 @@ public class Game {
             table.getDealer().deal(dealerCard);
 
             for (Player player : table.getPlayers()) {
-                if(player.canPlay()) {
+                if (player.canPlay()) {
                     if (i == 0) {
                         player.setDealerUpCard(dealerCard);
                     }

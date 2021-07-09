@@ -21,7 +21,7 @@ public class Dealer extends AbstractPlayer {
 
     @Override
     public void deal(Card card) {
-        switch(dealerHand.getCardCount()) {
+        switch (dealerHand.getCardCount()) {
             case 0:
                 gamesPlayed();
                 card.setFaceDown(false);
@@ -40,7 +40,7 @@ public class Dealer extends AbstractPlayer {
         BlackJackDealerState state = dealerHand.getBlackjackState();
         LOGGER.debug("Beginning dealer blackjack state {}", state);
 
-        while(dealerHand.getBlackjackState().continueDrawing()) {
+        while (dealerHand.getBlackjackState().continueDrawing()) {
             if (state == BlackJackDealerState.HIT) {
                 dealerHand.addCard(shoe.draw(false));
             }

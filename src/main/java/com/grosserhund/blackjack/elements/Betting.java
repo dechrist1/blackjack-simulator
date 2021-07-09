@@ -21,7 +21,7 @@ public class Betting {
             return true;
 
         BigDecimal playerTotal = player.getCurrentBank();
-        for (BlackjackPlayerHand blackJackPlayerHand: player.getHands()) {
+        for (BlackjackPlayerHand blackJackPlayerHand : player.getHands()) {
             playerTotal = playerTotal.add(blackJackPlayerHand.getCurrentBet());
         }
         return playerTotal.compareTo(rules.getMinimumBet()) >= 0;
@@ -29,12 +29,12 @@ public class Betting {
 
 
     public boolean placeInitialBet(Player player, BlackjackPlayerHand blackjackPlayerHand) {
-        if(rules.isNotAllowedBetting()) {
+        if (rules.isNotAllowedBetting()) {
             LOGGER.trace("No initial betting needed - Playing for fun");
             return true;
         }
 
-        if(playerCanBet(player, rules.getMinimumBet())) {
+        if (playerCanBet(player, rules.getMinimumBet())) {
             player.setCurrentBank(player.getCurrentBank().subtract(rules.getMinimumBet()));
             blackjackPlayerHand.setCurrentBet(rules.getMinimumBet());
             LOGGER.debug("Balances after Initial bet for {}, bet=${} Bank=${}, Bet=${}", player.getName(), rules.getMinimumBet(), player.getCurrentBank(), blackjackPlayerHand.getCurrentBet());
@@ -46,13 +46,13 @@ public class Betting {
     }
 
     public boolean doubleDown(Player player, BlackjackPlayerHand blackjackPlayerHand) {
-        if(rules.isNotAllowedBetting()) {
+        if (rules.isNotAllowedBetting()) {
             LOGGER.trace("No double down betting needed - Playing for fun");
             return true;
         }
 
         BigDecimal currentBet = blackjackPlayerHand.getCurrentBet();
-        if(playerCanBet(player, currentBet)) {
+        if (playerCanBet(player, currentBet)) {
             player.setCurrentBank(player.getCurrentBank().subtract(currentBet));
             blackjackPlayerHand.setCurrentBet(blackjackPlayerHand.getCurrentBet().add(currentBet));
             LOGGER.debug("Balances after Double Down for {} Bank= ${}, bet= ${}, ", player.getName(), player.getCurrentBank(), blackjackPlayerHand.getCurrentBet());
@@ -67,8 +67,8 @@ public class Betting {
         int rc = player.getCurrentBank().compareTo(betAmount);
 
         LOGGER.debug("Player {} {} bet with a bank of ${} and a bet amount of {}", player.getName(),
-                rc>0 ?"can":"can not", player.getCurrentBank(), betAmount);
-        return rc>= 0;
+                rc > 0 ? "can" : "can not", player.getCurrentBank(), betAmount);
+        return rc >= 0;
 
     }
 
@@ -78,14 +78,14 @@ public class Betting {
     }
 
     public void split(Player player, BlackjackPlayerHand existingPlayerHand, BlackjackPlayerHand newPlayerHand) {
-        if(rules.isNotAllowedBetting()) {
+        if (rules.isNotAllowedBetting()) {
             LOGGER.trace("No split betting needed - Playing for fun");
             return;
         }
 
         BigDecimal existingBet = existingPlayerHand.getCurrentBet();
 
-        if(playerCanBet(player, existingBet)) {
+        if (playerCanBet(player, existingBet)) {
             newPlayerHand.setCurrentBet(existingBet);
             player.setCurrentBank(player.getCurrentBank().subtract(existingBet));
 

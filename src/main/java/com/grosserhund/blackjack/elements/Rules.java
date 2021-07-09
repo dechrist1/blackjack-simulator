@@ -6,14 +6,14 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 
 public class Rules {
-     private static final Logger LOGGER = LoggerFactory.getLogger(Rules.class.getName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Rules.class.getName());
 
     private final Betting betting = new Betting(this);
     private int maximumPlayers = 1;
     private int totalDecks = 1;
     private int dealerStandValue = 17;
     private int dealerStandSoftValue = 17;
-    private int cutIndex = maximumPlayers  * 5 + 5; // players * cards five-card charlie ;
+    private int cutIndex = maximumPlayers * 5 + 5; // players * cards five-card charlie ;
     private boolean allowPlayerSplit = true;
     private boolean allowDoubleDown = true;
     private boolean doubleDownOnSplit = true;
@@ -28,7 +28,7 @@ public class Rules {
     }
 
     public void setMaximumPlayers(int maximumPlayers) {
-        if(maximumPlayers < 1 || maximumPlayers > 7) {
+        if (maximumPlayers < 1 || maximumPlayers > 7) {
             LOGGER.warn("The maximum number of players ({}) must be between 1 and 7", maximumPlayers);
         } else {
             this.maximumPlayers = maximumPlayers;
@@ -40,7 +40,7 @@ public class Rules {
     }
 
     public void setTotalDecks(int totalDecks) {
-        if(totalDecks < 1 || totalDecks > 8) {
+        if (totalDecks < 1 || totalDecks > 8) {
             LOGGER.warn("The number of decks ({}) must be between 1 and 8", totalDecks);
         } else {
             this.totalDecks = totalDecks;
@@ -52,7 +52,7 @@ public class Rules {
     }
 
     public void setDealerStandValue(int dealerStandValue) {
-        if(dealerStandValue < 1 || dealerStandValue > 21) {
+        if (dealerStandValue < 1 || dealerStandValue > 21) {
             LOGGER.warn("The Sealer's stand value ({}) must be between 1 and 8", dealerStandValue);
         } else {
             this.dealerStandValue = dealerStandValue;
@@ -64,7 +64,7 @@ public class Rules {
     }
 
     public void setDealerStandSoftValue(int dealerStandSoftValue) {
-        if(dealerStandSoftValue < 1 || dealerStandSoftValue > 21) {
+        if (dealerStandSoftValue < 1 || dealerStandSoftValue > 21) {
             LOGGER.warn("The Dealer's stand softvalue ({}) must be between 1 and 8", dealerStandSoftValue);
         } else {
             this.dealerStandSoftValue = dealerStandSoftValue;
@@ -108,7 +108,7 @@ public class Rules {
     }
 
     public void setMinimumBet(BigDecimal minimumBet) {
-        if(minimumBet.compareTo(BigDecimal.ZERO) <= 0) {
+        if (minimumBet.compareTo(BigDecimal.ZERO) <= 0) {
             LOGGER.warn("The minimum bet ({}) must be greater than 0 - betting turned off", minimumBet);
             allowBetting = false;
         } else {
